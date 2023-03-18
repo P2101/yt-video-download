@@ -2,6 +2,7 @@ import pytube # pip install pytube
 
 url = input('Enter video url: ')
 
-path = "C:/Users/Pau Pons/OneDrive/Escritorio/Pau/youtube" # the storage path of the video
+# the storage PATH of the video
+path = "C:/Users/NAME/Desktop/folder" 
 
-pytube.YouTube(url).streams.get_highest_resolution().download(path) # download the video
+pytube.YouTube(url).streams.get_highest_resolution().download(path) 
