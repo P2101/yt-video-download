@@ -1,8 +1,15 @@
-import pytube # pip install pytube
+import yt_dlp # py -m pip install pytube
 
-url = input('Enter video url: ')
+url = input("Enter video url: ")
 
-# the storage PATH of the video
-path = "C:/Users/NAME/Desktop/folder" 
+path = r"C:\Users\Name\Downloads"
 
-pytube.YouTube(url).streams.get_highest_resolution().download(path) 
+ydl_opts = {
+    'outtmpl': path + '/%(title)s.%(ext)s',
+    'format': 'best'
+}
+
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([url])
+
+print("Video descargado correctamente")
